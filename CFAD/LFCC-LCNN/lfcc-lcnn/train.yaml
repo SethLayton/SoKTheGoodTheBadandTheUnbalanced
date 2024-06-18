@@ -1,0 +1,22 @@
+name: lfcc_lcnn
+
+
+
+batch_size: 128
+max_frame_length: 320
+with_delta: True
+with_energy: False
+num_workers: 4
+
+gpu_idx: [0] #[0, 1]
+nb_proc_db: 4
+
+optimizer: adam #sgd
+lr: 0.0003         
+opt_mom: 0.9
+wd: 1.0e-5
+epoch: 100
+save_best_only: False
+#flags
+nesterov: 0 #for sgd optim
+
