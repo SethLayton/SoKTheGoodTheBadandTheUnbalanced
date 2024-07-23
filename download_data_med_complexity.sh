@@ -58,8 +58,8 @@ mkdir -p ASVspoof/RawNet2/models && tar -xvzf asvspoof_rawnet2model_pretrained.t
 wget "https://zenodo.org/records/12007844/files/asvspoof_wav2vecmodel_pretrained.tar.gz"
 mkdir -p ASVspoof/wav2vec/models && tar -xvzf asvspoof_wav2vecmodel_pretrained.tar.gz -C ASVspoof/wav2vec/models
 
-wget "https://zenodo.org/records/12007844/files/asvspoof_lfcclcnnmodel_pretrained.tar.gz"
-mkdir -p ASVspoof/LFCC-LCNN/models && tar -xvzf asvspoof_lfcclcnnmodel_pretrained.tar.gz -C ASVspoof/LFCC-LCNN/models
+wget "https://zenodo.org/records/12007844/files/asvsppof_lfcclcnnmodel_pretrained.tar.gz"
+mkdir -p ASVspoof/LFCC-LCNN/models && tar -xvzf asvsppof_lfcclcnnmodel_pretrained.tar.gz -C ASVspoof/LFCC-LCNN/models
 
 wget "https://zenodo.org/records/12089727/files/cfad_rawnet2model_pretrained.tar.gz"
 mkdir -p CFAD/RawNet2/models && tar -xvzf cfad_rawnet2model_pretrained.tar.gz -C CFAD/RawNet2/models
