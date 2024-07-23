@@ -75,10 +75,10 @@ Requires relatively negligible time (No additional downloads)
 ##### --Skip this if not retraining models, or recalculating scores files (i.e., just recreating figures/tables from our provided scores files) -- 
 
     conda env create --name ssl1 --file=env_2.yml    
-    conda activate env_2    
+    conda activate ssl1    
     cd ASVspoof/wav2vec/SSL_Anti-spoofing/fairseq-a54021305d6b3c4c5959ac9395135f63202db8f1    
     pip install --editable ./    
-    conda deactivate env_2
+    conda deactivate ssl1
     cd ../../../../
 
 ##### 3. CIFAKE
@@ -88,168 +88,26 @@ Requires relatively negligible time (No additional downloads)
 <details>
 	<summary><h2><b>Download Data</h2></b></summary><p>
 	
-	
     
-### ---- If Maximum Complexity ----
-Download/extract all data
+### -------- If Maximum Complexity --------
 
-    cd ../DataSets	
+    sh download_data_max_complexity.sh	
 	
-	mkdir ASVspoof
-	
-    wget "https://zenodo.org/records/12007844/files/asv_libri.tar.gz.00"
-	wget "https://zenodo.org/records/12007844/files/asv_libri.tar.gz.01"
-    cat asv_libri.tar.gz.* | tar xzvf - -C ASVspoof/
-	
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.00"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.01"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.02"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.03"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.04"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.05"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.06"
-    cat asv_realonly.tar.gz.* | tar xzvf - -C ASVspoof/
-	
-	wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part00.tar.gz"
-	wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part01.tar.gz"
-	wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part02.tar.gz"
-	wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part03.tar.gz"
-	tar -xvzf ASVspoof2021_DF_eval_part00.tar.gz -C ASVspoof/
-	tar -xvzf ASVspoof2021_DF_eval_part01.tar.gz -C ASVspoof/
-	tar -xvzf ASVspoof2021_DF_eval_part02.tar.gz -C ASVspoof/
-	tar -xvzf ASVspoof2021_DF_eval_part03.tar.gz -C ASVspoof/
-	
-	
-	mkdir CFAD	
-	
-	wget "https://zenodo.org/records/12089727/files/cfad_eval.tar.gz.00"
-	wget "https://zenodo.org/records/12089727/files/cfad_eval.tar.gz.01"
-	wget "https://zenodo.org/records/12089727/files/cfad_eval.tar.gz.02"
-    cat cfad_eval.tar.gz.* | tar xzvf - -C CFAD/
-	
-	wget "https://zenodo.org/records/12089727/files/cfad_train.tar.gz.00"
-	wget "https://zenodo.org/records/12089727/files/cfad_train.tar.gz.01"
-	wget "https://zenodo.org/records/12089727/files/cfad_train.tar.gz.02"
-	wget "https://zenodo.org/records/12089727/files/cfad_train.tar.gz.03"
-    cat cfad_train.tar.gz.* | tar xzvf - -C CFAD/
-	
-	wget "https://zenodo.org/records/12089727/files/wenet_real_only.tar.gz.00"
-	wget "https://zenodo.org/records/12089727/files/wenet_real_only.tar.gz.01"
-    cat wenet_real_only.tar.gz.* | tar xzvf -
-	
-	
-	mkdir CIFAKE
-	
-    wget "https://zenodo.org/records/12090252/files/cifake2575.tar.gz"
-	tar -xvzf cifake2575.tar.gz -C CIFAKE/
-	
-	wget "https://zenodo.org/records/12090252/files/cifake5050.tar.gz"
-    tar -xvzf cifake5050.tar.gz -C CIFAKE/
-	
-	wget "https://zenodo.org/records/12090252/files/7525.tar.gz"
-    tar -xvzf cifake7525.tar.gz -C CIFAKE/
-	
-	wget "https://zenodo.org/records/12090252/files/9010.tar.gz"
-    tar -xvzf cifake9010.tar.gz -C CIFAKE/
-	
-	wget "https://zenodo.org/records/12090252/files/cifakeRO.tar.gz"
-    tar -xvzf cifakeRO.tar.gz -C CIFAKE/
-	
-	wget "https://zenodo.org/records/12090252/files/cifaketest.tar.gz"
-    tar -xvzf cifaketest.tar.gz -C CIFAKE/
-    
-
-Download the wav2vec pretrained model
-
-    cd ../DataSets
-    wget "https://dl.fbaipublicfiles.com/fairseq/wav2vec/xlsr2_300m.pt"
-
-Continue on to **STEP 1**
+Continue to **STEP 1**
 
 
 
-### ---- If Medium Complexity ----
-Download/extract test data only
+### -------- If Medium Complexity --------
 
-    cd ../DataSets	
+    sh download_data_med_complexity.sh	
 	
-	mkdir ASVspoof
-	
-    wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.00"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.01"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.02"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.03"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.04"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.05"
-	wget "https://zenodo.org/records/12007844/files/asv_realonly.tar.gz.06"
-    cat asv_realonly.tar.gz.* | tar xzvf - -C ASVspoof/
-	
-	wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part00.tar.gz"
-    wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part01.tar.gz"
-    wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part02.tar.gz"
-    wget "https://zenodo.org/records/4835108/files/ASVspoof2021_DF_eval_part03.tar.gz"
-    tar -xvzf ASVspoof2021_DF_eval_part00.tar.gz -C ASVspoof/
-    tar -xvzf ASVspoof2021_DF_eval_part01.tar.gz -C ASVspoof/
-    tar -xvzf ASVspoof2021_DF_eval_part02.tar.gz -C ASVspoof/
-    tar -xvzf ASVspoof2021_DF_eval_part03.tar.gz -C ASVspoof/
-	
-	
-	mkdir CFAD
-	
-    wget "https://zenodo.org/records/12089727/files/cfad_eval.tar.gz.00"
-	wget "https://zenodo.org/records/12089727/files/cfad_eval.tar.gz.01"
-	wget "https://zenodo.org/records/12089727/files/cfad_eval.tar.gz.02"
-    cat cfad_eval.tar.gz.* | tar xzvf - -C CFAD/
-	
-    wget "https://zenodo.org/records/12089727/files/wenet_real_only.tar.gz.00"
-	wget "https://zenodo.org/records/12089727/files/wenet_real_only.tar.gz.01"
-    cat wenet_real_only.tar.gz.* | tar xzvf -
-	
-	
-	mkdir CIFAKE
-	
-	wget "https://zenodo.org/records/12090252/files/cifakeRO.tar.gz"
-    tar -xvzf cifakeRO.tar.gz -C CIFAKE/
-	
-	wget "https://zenodo.org/records/12090252/files/cifaketest.tar.gz"
-    tar -xvzf cifaketest.tar.gz -C CIFAKE/
-	
-    
-   
-Download/extract all pre-trained models
-  
-
-     cd ../SoKTheGoodTheBadandTheUnbalanced
-	 
-     wget "https://zenodo.org/records/12007844/files/asvspoof_rawnet2model_pretrained.tar.gz
-     tar -xvzf asvspoof_rawnet2model_pretrained.tar.gz -C ASVspoof/RawNet2/models
-	 
-	 wget "https://zenodo.org/records/12007844/files/asvspoof_wav2vecmodel_pretrained.tar.gz
-     tar -xvzf asvspoof_wav2vecmodel_pretrained.tar.gz -C ASVspoof/wav2vec/models
-	 
-	 wget "https://zenodo.org/records/12007844/files/asvspoof_lfcclcnnmodel_pretrained.tar.gz
-     tar -xvzf asvspoof_lfcclcnnmodel_pretrained.tar.gz -C ASVspoof/LFCC-LCNN/models
-	 
-	 wget "https://zenodo.org/records/12089727/files/cfad_rawnet2model_pretrained.tar.gz"
-     tar -xvzf cfad_rawnet2model_pretrained.tar.gz -C CFAD/RawNet2/models
-	 
-	 wget "https://zenodo.org/records/12089727/files/cfad_lfcclcnnmodel_pretrained.tar.gz"
-     tar -xvzf cfad_lfcclcnnmodel_pretrained.tar.gz -C CFAD/LFCC-LCNN/models
-	 
-	 wget "https://zenodo.org/records/12090252/files/cifake_rawcnnmodel_pretrained.tar.gz"
-     tar -xvzf cifake_rawcnnmodel_pretrained.tar.gz -C CIFAKE/CIFAKE/models
-
-Download the wav2vec pretrained model
-
-    cd ../DataSets
-    wget "https://dl.fbaipublicfiles.com/fairseq/wav2vec/xlsr2_300m.pt"
-
-Continue on to **STEP 2.2**
+Continue  to **STEP 2.2**
 
 
-### ---- If Minimum Complexity ----
-No additional downloads necessary as all scores files to produce figures/tables are provided in the source code repo.
-Continue on to **STEP 3.3**
+### -------- If Minimum Complexity --------
+No additional downloads are necessary as all score files to produce figures/tables are provided in the source code repo.
+
+Continue to **STEP 3.3**
 
 </details></p>
 
