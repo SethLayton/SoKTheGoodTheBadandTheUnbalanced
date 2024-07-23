@@ -89,7 +89,7 @@ Requires relatively negligible time (No additional downloads)
 	<summary><h2><b>Download Data</h2></b></summary><p>
 	
     
-### -------- If Maximum Complexity --------
+## -------- If Maximum Complexity --------
 
     sh download_data_max_complexity.sh	
 	
@@ -97,14 +97,14 @@ Continue to **STEP 1**
 
 
 
-### -------- If Medium Complexity --------
+## -------- If Medium Complexity --------
 
     sh download_data_med_complexity.sh	
 	
 Continue  to **STEP 2.2**
 
 
-### -------- If Minimum Complexity --------
+## -------- If Minimum Complexity --------
 No additional downloads are necessary as all score files to produce figures/tables are provided in the source code repo.
 
 Continue to **STEP 3.3**
